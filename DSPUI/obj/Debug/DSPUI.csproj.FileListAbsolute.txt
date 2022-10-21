@@ -90,3 +90,32 @@ C:\Users\Haitham Mahmoud\Documents\College\DSP\Tasks\DSPToolbox\DSPUI\obj\Debug\
 C:\Users\Haitham Mahmoud\Documents\College\DSP\Tasks\DSPToolbox\DSPUI\obj\Debug\DSPUI.csproj.CopyComplete
 C:\Users\Haitham Mahmoud\Documents\College\DSP\Tasks\DSPToolbox\DSPUI\obj\Debug\DSPUI.exe
 C:\Users\Haitham Mahmoud\Documents\College\DSP\Tasks\DSPToolbox\DSPUI\obj\Debug\DSPUI.pdb
+C:\Users\Hani\Desktop\Github\DSP\DSP-ToolBox\DSPUI\bin\Debug\Media\Warning.png
+C:\Users\Hani\Desktop\Github\DSP\DSP-ToolBox\DSPUI\bin\Debug\DSPUI.exe.config
+C:\Users\Hani\Desktop\Github\DSP\DSP-ToolBox\DSPUI\bin\Debug\DSPUI.exe
+C:\Users\Hani\Desktop\Github\DSP\DSP-ToolBox\DSPUI\bin\Debug\DSPUI.pdb
+C:\Users\Hani\Desktop\Github\DSP\DSP-ToolBox\DSPUI\bin\Debug\DSPComponents.dll
+C:\Users\Hani\Desktop\Github\DSP\DSP-ToolBox\DSPUI\bin\Debug\OxyPlot.dll
+C:\Users\Hani\Desktop\Github\DSP\DSP-ToolBox\DSPUI\bin\Debug\OxyPlot.WindowsForms.dll
+C:\Users\Hani\Desktop\Github\DSP\DSP-ToolBox\DSPUI\bin\Debug\DSPComponents.pdb
+C:\Users\Hani\Desktop\Github\DSP\DSP-ToolBox\DSPUI\bin\Debug\OxyPlot.pdb
+C:\Users\Hani\Desktop\Github\DSP\DSP-ToolBox\DSPUI\bin\Debug\OxyPlot.xml
+C:\Users\Hani\Desktop\Github\DSP\DSP-ToolBox\DSPUI\bin\Debug\OxyPlot.WindowsForms.pdb
+C:\Users\Hani\Desktop\Github\DSP\DSP-ToolBox\DSPUI\bin\Debug\OxyPlot.WindowsForms.xml
+C:\Users\Hani\Desktop\Github\DSP\DSP-ToolBox\DSPUI\obj\Debug\DSPUI.csproj.AssemblyReference.cache
+C:\Users\Hani\Desktop\Github\DSP\DSP-ToolBox\DSPUI\obj\Debug\DSPUI.ComponentsAttriutesEditor.DiscreteFourierTransform.resources
+C:\Users\Hani\Desktop\Github\DSP\DSP-ToolBox\DSPUI\obj\Debug\DSPUI.ComponentsAttriutesEditor.FastFourierTransform.resources
+C:\Users\Hani\Desktop\Github\DSP\DSP-ToolBox\DSPUI\obj\Debug\DSPUI.ComponentsAttriutesEditor.FileInputSignal.resources
+C:\Users\Hani\Desktop\Github\DSP\DSP-ToolBox\DSPUI\obj\Debug\DSPUI.ComponentsAttriutesEditor.FIR.resources
+C:\Users\Hani\Desktop\Github\DSP\DSP-ToolBox\DSPUI\obj\Debug\DSPUI.ComponentsAttriutesEditor.MovingAverage.resources
+C:\Users\Hani\Desktop\Github\DSP\DSP-ToolBox\DSPUI\obj\Debug\DSPUI.ComponentsAttriutesEditor.MultiplySignalByConstant.resources
+C:\Users\Hani\Desktop\Github\DSP\DSP-ToolBox\DSPUI\obj\Debug\DSPUI.ComponentsAttriutesEditor.Normalizer.resources
+C:\Users\Hani\Desktop\Github\DSP\DSP-ToolBox\DSPUI\obj\Debug\DSPUI.ComponentsAttriutesEditor.QuantizationAndEncoding.resources
+C:\Users\Hani\Desktop\Github\DSP\DSP-ToolBox\DSPUI\obj\Debug\DSPUI.ComponentsAttriutesEditor.Shifter.resources
+C:\Users\Hani\Desktop\Github\DSP\DSP-ToolBox\DSPUI\obj\Debug\DSPUI.DSPToolbox.resources
+C:\Users\Hani\Desktop\Github\DSP\DSP-ToolBox\DSPUI\obj\Debug\DSPUI.Properties.Resources.resources
+C:\Users\Hani\Desktop\Github\DSP\DSP-ToolBox\DSPUI\obj\Debug\DSPUI.csproj.GenerateResource.cache
+C:\Users\Hani\Desktop\Github\DSP\DSP-ToolBox\DSPUI\obj\Debug\DSPUI.csproj.CoreCompileInputs.cache
+C:\Users\Hani\Desktop\Github\DSP\DSP-ToolBox\DSPUI\obj\Debug\DSPUI.csproj.CopyComplete
+C:\Users\Hani\Desktop\Github\DSP\DSP-ToolBox\DSPUI\obj\Debug\DSPUI.exe
+C:\Users\Hani\Desktop\Github\DSP\DSP-ToolBox\DSPUI\obj\Debug\DSPUI.pdb
