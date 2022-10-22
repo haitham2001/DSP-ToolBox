@@ -23,15 +23,14 @@ namespace DSPAlgorithms.Algorithms
             if (InputSignal1.Samples.Count != InputSignal2.Samples.Count)
             {
                 int TheDifference = Math.Abs(InputSignal1.Samples.Count - InputSignal2.Samples.Count);
-                int MaxNumber = Math.Max(InputSignal1.Samples.Count, InputSignal2.Samples.Count);
                 if (InputSignal1.Samples.Count > InputSignal2.Samples.Count)
                 {
-                    for (int i = TheDifference; i < MaxNumber; i++)
+                    for (int i = 0; i < TheDifference; i++)
                         InputSignal2.Samples.Add(0);
                 }
                 else if (InputSignal1.Samples.Count < InputSignal2.Samples.Count)
                 {
-                    for (int i = TheDifference; i < MaxNumber; i++)
+                    for (int i = 0; i < TheDifference; i++)
                         InputSignal1.Samples.Add(0);
                 }
             }
