@@ -14,26 +14,46 @@ namespace DSPAlgorithms.Algorithms
 
         public override void Run()
         {
-            List<float> signal_samples = new List<float>();
-            if(InputSignals[0].Samples.Count != InputSignals[1].Samples.Count)
+            OutputSignal = new Signal(new List<float>(), false);
+            int max = 0;
+            int CountLessThanMax = 0;
+            for(int i = 0;i<InputSignals.Count;i++)
             {
-                int TheDifference = Math.Abs(InputSignals[0].Samples.Count - InputSignals[1].Samples.Count);
-                if (InputSignals[0].Samples.Count > InputSignals[1].Samples.Count)
+                if(max < InputSignals[i].Samples.Count)
                 {
-                    for (int i = 0; i < TheDifference; i++)
-                        InputSignals[1].Samples.Add(0);
+                    if (max != 0)
+                        CountLessThanMax++;
+                    max = InputSignals[i].Samples.Count;
                 }
-                else if(InputSignals[0].Samples.Count < InputSignals[1].Samples.Count)
+                else if (max > InputSignals[i].Samples.Count)
+                    CountLessThanMax++;
+                else
+                    continue;
+            }
+            if (CountLessThanMax > 0)
+            {
+                for(int i = 0; i < InputSignals.Count;i++)
                 {
-                    for (int i = 0; i < TheDifference; i++)
-                        InputSignals[0].Samples.Add(0);
+                    if (InputSignals[i].Samples.Count < max)
+                    {
+                        int TheDifference = max - InputSignals[i].Samples.Count;
+                        for(int j = 0; j < TheDifference; j++)
+                        {
+                            InputSignals[i].Samples.Add(0);
+                        }
+                    }
                 }
             }
-            for (int i = 0; i < InputSignals[1].Samples.Count; i++)
+            for (int i = 0; i < InputSignals[0].Samples.Count; i++)
             {
-                signal_samples.Add(InputSignals[0].Samples[i] + InputSignals[1].Samples[i]);
+                float SampleResult = 0;
+                for(int j = 0; j < InputSignals.Count; j++)
+                {
+                    SampleResult += InputSignals[j].Samples[i];
+                }
+                OutputSignal.Samples.Add(SampleResult);
             }
-            OutputSignal = new Signal(signal_samples, false);
+            
         }
     }
 }
