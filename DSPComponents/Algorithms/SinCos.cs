@@ -18,8 +18,13 @@ namespace DSPAlgorithms.Algorithms
         public List<float> samples { get; set; }
         public override void Run()
         {
-            
-            throw new NotImplementedException();
+            samples = new List<float>();
+            if (type == "sin")
+                for (int i = 0; i < SamplingFrequency; i++)
+                    samples.Add((float)(A * Math.Sin((2 * Math.PI * i * AnalogFrequency / SamplingFrequency) + PhaseShift)));
+            else
+                for (int i = 0; i < SamplingFrequency; i++)
+                    samples.Add((float)(A * Math.Cos((2 * Math.PI * i * AnalogFrequency / SamplingFrequency) + PhaseShift)));
         }
     }
 }
