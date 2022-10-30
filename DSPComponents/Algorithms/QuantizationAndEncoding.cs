@@ -35,31 +35,45 @@ namespace DSPAlgorithms.Algorithms
             else if (InputLevel > 0)
                 InputNumBits = (int)Math.Log(InputLevel, 2);
 
-            float Max_Amp = InputSignal.Samples.Max();
-            float Min_Amp = InputSignal.Samples.Min();
-            float res = (Max_Amp - Min_Amp) / InputLevel;
+            float Max = InputSignal.Samples.Max();
+            float Min = InputSignal.Samples.Min();
+            float res = (Max - Min) / InputLevel;
 
             List<Range> Level = new List<Range>();
-            for (int i = 1; i < InputLevel + 1; i++)
+            Range r;
+
+            for (int i = 0; i < InputLevel; i++)
             {
-                Level[i].Start.Equals(Min_Amp);
-                Min_Amp += res;
-                Level[i].End.Equals(Min_Amp);
-                Level[i].Midpoint.Equals((Level[i].Start + Level[i].End) / 2);
+                r.Start = Min;
+                r.End =Min + res;
+                r.Midpoint = (r.Start + r.End) / 2.000f;
+                Min = r.End;
+                Level.Add(r);
             }
 
-            for (int i = 0; i < InputSignal.Samples.Count(); i++)
+
+            for (int i = 0; i < InputSignal.Samples.Count; i++)
             {
-                for (int j = 1; j < InputLevel + 1; j++)
+
+                for (int j = 0; j < InputLevel; j++)    
                 {
-                    if (InputSignal.Samples[i] >= Level[j].Start && InputSignal.Samples[i] <= Level[j].End)
+                    if (InputSignal.Samples[i] >= Level[j].Start && InputSignal.Samples[i] < Level[j].End)
                     {
-                        OutputIntervalIndices.Add(j);
+                        OutputIntervalIndices.Add(j + 1);
                         OutputQuantizedSignal.Samples.Add(Level[j].Midpoint);
                         OutputSamplesError.Add(Level[j].Midpoint - InputSignal.Samples[i]);
+                        OutputEncodedSignal.Add(Convert.ToString(j, 2).PadLeft(InputNumBits, '0'));
+                        break;
+                    }
+                    if (InputSignal.Samples[i] == (float)Math.Round(Level[InputLevel - 1].End, 2))
+                    {
+                        OutputIntervalIndices.Add(InputLevel);
+                        OutputQuantizedSignal.Samples.Add(Level[InputLevel - 1].Midpoint);
+                        OutputSamplesError.Add(Level[InputLevel - 1].Midpoint - InputSignal.Samples[i]);
+                        OutputEncodedSignal.Add(Convert.ToString(InputLevel - 1, 2).PadLeft(InputNumBits, '0'));
+                        break;
                     }
                 }
-
             }
         }
     }
