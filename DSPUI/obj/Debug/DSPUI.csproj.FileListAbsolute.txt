@@ -119,3 +119,4 @@ C:\Users\Hani\Desktop\Github\DSP\DSP-ToolBox\DSPUI\obj\Debug\DSPUI.csproj.CoreCo
 C:\Users\Hani\Desktop\Github\DSP\DSP-ToolBox\DSPUI\obj\Debug\DSPUI.csproj.CopyComplete
 C:\Users\Hani\Desktop\Github\DSP\DSP-ToolBox\DSPUI\obj\Debug\DSPUI.exe
 C:\Users\Hani\Desktop\Github\DSP\DSP-ToolBox\DSPUI\obj\Debug\DSPUI.pdb
+C:\Users\Haitham Mahmoud\Documents\College\DSP\Tasks\DSPToolbox\DSPUI\obj\Debug\DSPUI.csproj.SuggestedBindingRedirects.cache
