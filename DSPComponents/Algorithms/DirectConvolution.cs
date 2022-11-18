@@ -18,7 +18,15 @@ namespace DSPAlgorithms.Algorithms
         /// </summary>
         public override void Run()
         {
-            throw new NotImplementedException();
+            var total = InputSignal1.Samples.Count + InputSignal2.Samples.Count - 1;
+            var startIndex = Math.Min(InputSignal1.SamplesIndices.Min(), InputSignal2.SamplesIndices.Min());
+            for(int i = 0; i < total; i++)
+            {
+                for(int k = 0; k < startIndex; k++)
+                {
+
+                }
+            }
         }
     }
 }
