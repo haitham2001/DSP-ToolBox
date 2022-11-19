@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using DSPAlgorithms.DataStructures;
@@ -15,7 +16,16 @@ namespace DSPAlgorithms.Algorithms
 
         public override void Run()
         {
-            throw new NotImplementedException();
+            if (InputSignal.Periodic == true && InputSignal.FrequenciesAmplitudes.Count == 1)
+                ShiftingValue *= -1;
+            //else if (InputSignal.FrequenciesAmplitudes.Count == 0)
+
+            //OutputShiftedSignal = new Signal(InputSignal.Samples, InputSignal.SamplesIndices.Select(x => x - ShiftingValue).ToList(), InputSignal.Periodic);
+
+            List<float> shifts = new List<float>() { (float)ShiftingValue };
+
+            OutputShiftedSignal = new Signal(InputSignal.Samples, InputSignal.SamplesIndices.Select(x => x - ShiftingValue).ToList(),
+                false, shifts, InputSignal.FrequenciesAmplitudes, new List<float>());
         }
     }
 }
