@@ -90,6 +90,7 @@ C:\Users\Haitham Mahmoud\Documents\College\DSP\Tasks\DSPToolbox\DSPUI\obj\Debug\
 C:\Users\Haitham Mahmoud\Documents\College\DSP\Tasks\DSPToolbox\DSPUI\obj\Debug\DSPUI.csproj.CopyComplete
 C:\Users\Haitham Mahmoud\Documents\College\DSP\Tasks\DSPToolbox\DSPUI\obj\Debug\DSPUI.exe
 C:\Users\Haitham Mahmoud\Documents\College\DSP\Tasks\DSPToolbox\DSPUI\obj\Debug\DSPUI.pdb
+C:\Users\Haitham Mahmoud\Documents\College\DSP\Tasks\DSPToolbox\DSPUI\obj\Debug\DSPUI.csproj.SuggestedBindingRedirects.cache
 C:\Users\Hani\Desktop\Github\DSP\DSP-ToolBox\DSPUI\bin\Debug\Media\Warning.png
 C:\Users\Hani\Desktop\Github\DSP\DSP-ToolBox\DSPUI\bin\Debug\DSPUI.exe.config
 C:\Users\Hani\Desktop\Github\DSP\DSP-ToolBox\DSPUI\bin\Debug\DSPUI.exe
@@ -103,6 +104,7 @@ C:\Users\Hani\Desktop\Github\DSP\DSP-ToolBox\DSPUI\bin\Debug\OxyPlot.xml
 C:\Users\Hani\Desktop\Github\DSP\DSP-ToolBox\DSPUI\bin\Debug\OxyPlot.WindowsForms.pdb
 C:\Users\Hani\Desktop\Github\DSP\DSP-ToolBox\DSPUI\bin\Debug\OxyPlot.WindowsForms.xml
 C:\Users\Hani\Desktop\Github\DSP\DSP-ToolBox\DSPUI\obj\Debug\DSPUI.csproj.AssemblyReference.cache
+C:\Users\Hani\Desktop\Github\DSP\DSP-ToolBox\DSPUI\obj\Debug\DSPUI.csproj.SuggestedBindingRedirects.cache
 C:\Users\Hani\Desktop\Github\DSP\DSP-ToolBox\DSPUI\obj\Debug\DSPUI.ComponentsAttriutesEditor.DiscreteFourierTransform.resources
 C:\Users\Hani\Desktop\Github\DSP\DSP-ToolBox\DSPUI\obj\Debug\DSPUI.ComponentsAttriutesEditor.FastFourierTransform.resources
 C:\Users\Hani\Desktop\Github\DSP\DSP-ToolBox\DSPUI\obj\Debug\DSPUI.ComponentsAttriutesEditor.FileInputSignal.resources
@@ -119,4 +121,3 @@ C:\Users\Hani\Desktop\Github\DSP\DSP-ToolBox\DSPUI\obj\Debug\DSPUI.csproj.CoreCo
 C:\Users\Hani\Desktop\Github\DSP\DSP-ToolBox\DSPUI\obj\Debug\DSPUI.csproj.CopyComplete
 C:\Users\Hani\Desktop\Github\DSP\DSP-ToolBox\DSPUI\obj\Debug\DSPUI.exe
 C:\Users\Hani\Desktop\Github\DSP\DSP-ToolBox\DSPUI\obj\Debug\DSPUI.pdb
-C:\Users\Haitham Mahmoud\Documents\College\DSP\Tasks\DSPToolbox\DSPUI\obj\Debug\DSPUI.csproj.SuggestedBindingRedirects.cache
