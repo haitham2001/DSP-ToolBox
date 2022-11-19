@@ -18,14 +18,46 @@ namespace DSPAlgorithms.Algorithms
         /// </summary>
         public override void Run()
         {
-            var total = InputSignal1.Samples.Count + InputSignal2.Samples.Count - 1;
-            var startIndex = Math.Min(InputSignal1.SamplesIndices.Min(), InputSignal2.SamplesIndices.Min());
-            for(int i = 0; i < total; i++)
+            OutputConvolvedSignal = new Signal(new List<float>(), new List<int>(), false);
+            int startIndex;
+            int endIndex;
+            if (InputSignal1.SamplesIndices != null)
             {
-                for(int k = 0; k < startIndex; k++)
-                {
+                startIndex = InputSignal1.SamplesIndices.Min() + InputSignal2.SamplesIndices.Min();
+                endIndex = InputSignal1.SamplesIndices.Max() + InputSignal2.SamplesIndices.Max();
+            }
+            else
+            {
+                startIndex = 0;
+                endIndex = InputSignal1.Samples.Count + InputSignal2.Samples.Count - 1;
+            }
 
+            for (int i = startIndex; i <= endIndex; i++)
+            {
+                float yOfK = 0;
+                for(int k = startIndex; k <= endIndex; k++)
+                {
+                    int xIndex;
+                    int hIndex;
+                    if(InputSignal1.SamplesIndices != null)
+                    {
+                        xIndex = InputSignal1.SamplesIndices.IndexOf(k);
+                        hIndex = InputSignal2.SamplesIndices.IndexOf(i - k);
+                    }
+                    else 
+                    {
+                        xIndex = k;
+                        hIndex = i - k;
+                    }
+                    if (xIndex == -1 || hIndex == -1)
+                        continue;
+
+                    yOfK += (InputSignal1.Samples[xIndex] * InputSignal2.Samples[hIndex]);
                 }
+                if (yOfK == 0 && i == endIndex)
+                    break;
+                OutputConvolvedSignal.Samples.Add(yOfK);
+                OutputConvolvedSignal.SamplesIndices.Add(i);
             }
         }
     }

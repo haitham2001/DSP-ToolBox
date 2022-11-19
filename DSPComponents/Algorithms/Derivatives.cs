@@ -18,8 +18,11 @@ namespace DSPAlgorithms.Algorithms
         {
             FirstDerivative = new Signal(new List<float>(), false);
             SecondDerivative = new Signal(new List<float>(), false);
-            for(int i = 0; i < InputSignal.Samples.Count - 1; i++)
+            for(int i = 0; i < InputSignal.Samples.Count; i++)
             {
+                if (i + 1 == InputSignal.Samples.Count)
+                    break;
+
                 float yOfFirstDerivative = InputSignal.Samples[i];
                 float yOfSecondDerivative = InputSignal.Samples[i + 1]  - 2 * InputSignal.Samples[i];
 
