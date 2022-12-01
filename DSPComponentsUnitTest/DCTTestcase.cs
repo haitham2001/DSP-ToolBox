@@ -13,7 +13,7 @@ namespace DSPComponentsUnitTest
     public class DCTTestcase
     {
         [TestMethod]
-        public void DCTTestcase()
+        public void DCTTestcases()
         {
             DCT dct = new DCT();
 
