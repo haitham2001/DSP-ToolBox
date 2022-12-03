@@ -12,16 +12,21 @@ namespace DSPAlgorithms.Algorithms
     {
         public Signal InputFreqDomainSignal { get; set; }
         public Signal OutputTimeDomainSignal { get; set; }
-
+        public List<Complex> Samples { get; set; }
         public override void Run()
         {
             OutputTimeDomainSignal = new Signal(new List<float>(), false);
-            List<Complex> Samples = new List<Complex>();
-            int SizeOfSignals = InputFreqDomainSignal.FrequenciesAmplitudes.Count;
-            for(int i = 0;i<SizeOfSignals;i++)
+            int SizeOfSignals = 0;
+            if(Samples == null)
             {
-                Samples.Add(Complex.FromPolarCoordinates(InputFreqDomainSignal.FrequenciesAmplitudes[i], InputFreqDomainSignal.FrequenciesPhaseShifts[i]));
+                SizeOfSignals = InputFreqDomainSignal.FrequenciesAmplitudes.Count;
+                Samples = new List<Complex>();
+                for (int i = 0; i < SizeOfSignals; i++)
+                    Samples.Add(Complex.FromPolarCoordinates(InputFreqDomainSignal.FrequenciesAmplitudes[i], InputFreqDomainSignal.FrequenciesPhaseShifts[i]));
             }
+            else
+                SizeOfSignals = Samples.Count;
+
             for (int i = 0; i < SizeOfSignals; i++)
             {
                 int n = 0;
