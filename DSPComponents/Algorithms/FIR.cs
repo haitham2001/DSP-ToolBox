@@ -25,8 +25,6 @@ namespace DSPAlgorithms.Algorithms
         public override void Run()
         {
             List<float> fc = new List<float>();
-            List<double> hd = new List<double>();
-            List<double> window = new List<double>();
             List<int> Indices = new List<int>();
             List<float> Multiply = new List<float>();
 
@@ -38,11 +36,10 @@ namespace DSPAlgorithms.Algorithms
             {
                 double h_d = Filters_hd(Math.Abs(i), fc[0], fc[0], (fc.Count == 1) ? 0 : fc[1]);
                 double w = calculate_Window(w_f, Math.Abs(i));
-                hd.Add(h_d);
-                window.Add(w);
                 Multiply.Add((float)(h_d*w));
                 Indices.Add(i);
             }
+
 
             OutputHn = new Signal(Multiply, false);
             OutputHn.SamplesIndices = Indices;
