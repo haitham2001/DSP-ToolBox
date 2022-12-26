@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,17 +26,28 @@ namespace DSPAlgorithms.Algorithms
         public override void Run()
         {
             OutputHn = new Signal(new List<float>(),new List<int>(), false);
+           
+            
+            List<float> Mltiply = new List<float>();
+            List<float> reverse = new List<float>();
+
+            List<int> indices = new List<int>();
+            List<int> all_indices = new List<int>();
+
             List<float> fc = FC((InputCutOffFrequency == null) ? 0 : (float)InputCutOffFrequency, (InputF1 == null) ? 0 : (float)InputF1, (InputF2 == null) ? 0 : (float)InputF2 );
 
             win_fun w_f = get_window();
 
-            for (int i = (-1 * ((int)w_f.N - 1) / 2); i <= ((int)w_f.N - 1) / 2; i++)
+            for (int i = 0; i <= ((int)w_f.N - 1) / 2; i++)
             {
                 double h_d = Filters_hd(Math.Abs(i), fc[0], fc[0], (fc.Count == 1) ? 0 : fc[1]);
                 double w = calculate_Window(w_f, Math.Abs(i));
-                OutputHn.Samples.Add((float)(h_d*w));
-                OutputHn.SamplesIndices.Add(i);
+                Mltiply.Add((float)(h_d * w));
+                indices.Add(i);
             }
+
+            OutputHn.Samples = (Enumerable.Reverse(Mltiply).ToList()).Take(Mltiply.Count - 1).ToList().Concat(Mltiply).ToList();
+            OutputHn.SamplesIndices = ((Enumerable.Reverse(indices).ToList()).Take(indices.Count - 1).ToList().Select(x => x * -1).ToList()).Concat(indices).ToList();
 
             DirectConvolution dc = new DirectConvolution();
             dc.InputSignal1 = InputTimeDomainSignal;

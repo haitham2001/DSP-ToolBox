@@ -87,7 +87,7 @@ namespace DSPAlgorithms.Algorithms
             OutputFreqDomainSignal = dft.OutputFreqDomainSignal;
 
             //save the signal
-            saveSignal("FreqDomainSignal.ds", dft.OutputFreqDomainSignal);
+            saveSignal("FreqDomainSignal.ds", OutputFreqDomainSignal);
 
         }
 
