@@ -21,6 +21,9 @@ namespace DSPAlgorithms.Algorithms
             OutputConvolvedSignal = new Signal(new List<float>(), new List<int>(), false);
             int startIndex;
             int endIndex;
+            List<float> tempValues = new List<float>();
+            List<int> tempIndices = new List<int>();
+            bool isZeroes = false;
             if (InputSignal1.SamplesIndices != null)
             {
                 startIndex = InputSignal1.SamplesIndices.Min() + InputSignal2.SamplesIndices.Min();
@@ -54,10 +57,28 @@ namespace DSPAlgorithms.Algorithms
 
                     yOfK += (InputSignal1.Samples[xIndex] * InputSignal2.Samples[hIndex]);
                 }
-                if (yOfK == 0 && i == endIndex)
-                    break;
-                OutputConvolvedSignal.Samples.Add(yOfK);
-                OutputConvolvedSignal.SamplesIndices.Add(i);
+
+                if (yOfK == 0)
+                {
+                    isZeroes = true;
+                    tempValues.Add(yOfK);
+                    tempIndices.Add(i);
+                    if (i == endIndex)
+                        break;
+                }
+                else
+                {
+                    if (isZeroes)
+                    {
+                        OutputConvolvedSignal.Samples.AddRange(tempValues);
+                        OutputConvolvedSignal.SamplesIndices.AddRange(tempIndices);
+                        tempValues.Clear();
+                        tempIndices.Clear();
+                        isZeroes = false;
+                    }
+                    OutputConvolvedSignal.Samples.Add(yOfK);
+                    OutputConvolvedSignal.SamplesIndices.Add(i);
+                }
             }
         }
     }

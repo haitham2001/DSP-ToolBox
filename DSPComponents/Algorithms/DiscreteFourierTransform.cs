@@ -19,6 +19,9 @@ namespace DSPAlgorithms.Algorithms
             complexes = new List<Complex>();
             OutputFreqDomainSignal = new Signal(false, new List<float>(), new List<float>(), new List<float>());
             int SizeOfSignals = InputTimeDomainSignal.Samples.Count;
+
+            float step_freqency = (float)((2 * Math.PI) / (SizeOfSignals * (1 / InputSamplingFrequency)));
+            
             for (int k = 0; k < SizeOfSignals; k++)
             {
                 float Real = 0;
@@ -34,7 +37,9 @@ namespace DSPAlgorithms.Algorithms
                 double Amplitude = Math.Sqrt((Real * Real) + (Imaginary * Imaginary));
                 double PhaseShift = Math.Atan2(Imaginary , Real);
                 complexes.Add(new Complex(Real, Imaginary));
-                OutputFreqDomainSignal.Frequencies.Add(k);
+
+                OutputFreqDomainSignal.Frequencies.Add( k * step_freqency);
+                
                 OutputFreqDomainSignal.FrequenciesAmplitudes.Add((float)Amplitude);
                 OutputFreqDomainSignal.FrequenciesPhaseShifts.Add((float)PhaseShift);
             }

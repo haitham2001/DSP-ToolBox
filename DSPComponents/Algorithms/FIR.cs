@@ -24,11 +24,8 @@ namespace DSPAlgorithms.Algorithms
 
         public override void Run()
         {
-            List<float> fc = new List<float>();
-            List<int> Indices = new List<int>();
-            List<float> Multiply = new List<float>();
-
-            fc = FC((InputCutOffFrequency == null) ? 0 : (float)InputCutOffFrequency, (InputF1 == null) ? 0 : (float)InputF1, (InputF2 == null) ? 0 : (float)InputF2 );
+            OutputHn = new Signal(new List<float>(),new List<int>(), false);
+            List<float> fc = FC((InputCutOffFrequency == null) ? 0 : (float)InputCutOffFrequency, (InputF1 == null) ? 0 : (float)InputF1, (InputF2 == null) ? 0 : (float)InputF2 );
 
             win_fun w_f = get_window();
 
@@ -36,20 +33,14 @@ namespace DSPAlgorithms.Algorithms
             {
                 double h_d = Filters_hd(Math.Abs(i), fc[0], fc[0], (fc.Count == 1) ? 0 : fc[1]);
                 double w = calculate_Window(w_f, Math.Abs(i));
-                Multiply.Add((float)(h_d*w));
-                Indices.Add(i);
+                OutputHn.Samples.Add((float)(h_d*w));
+                OutputHn.SamplesIndices.Add(i);
             }
-
-
-            OutputHn = new Signal(Multiply, false);
-            OutputHn.SamplesIndices = Indices;
 
             DirectConvolution dc = new DirectConvolution();
             dc.InputSignal1 = InputTimeDomainSignal;
             dc.InputSignal2 = OutputHn;
             dc.Run();
-            for (int i = 0; i < dc.OutputConvolvedSignal.Samples.Count; i++)
-                dc.OutputConvolvedSignal.Samples[i] = dc.OutputConvolvedSignal.Samples[i];
 
             OutputYn = dc.OutputConvolvedSignal;
         }

@@ -23,7 +23,7 @@ namespace DSPAlgorithms.Algorithms
 
             for (int i = 0; i < InputSignal.Samples.Count; i++)
             {
-                    OutputNormalizedSignal.Samples[i] = (InputMaxRange - InputMinRange) * ((OutputNormalizedSignal.Samples[i] - min_val) / range) + InputMinRange;
+                OutputNormalizedSignal.Samples[i] = (InputMaxRange - InputMinRange) * ((OutputNormalizedSignal.Samples[i] - min_val) / range) + InputMinRange;
             }
         }
     }
