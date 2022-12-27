@@ -43,7 +43,7 @@ namespace DSPAlgorithms.Algorithms
             saveSignal("Fir Signal.ds", fir.OutputYn);
 
             Sampling sample = new Sampling();
-            if (Fs >= maxF * 2)
+            if (newFs >= maxF * 2)
             {
                 sample.InputSignal = fir.OutputYn;
                 sample.L = L;
